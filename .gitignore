@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Data
+*.mrc
+*.rec
+*.tif
+*.tiff
+*.star
+
+# Outputs
+*.png
+*.pdf
+*.svg
+*.csv
+*.json
+!requirements.txt
