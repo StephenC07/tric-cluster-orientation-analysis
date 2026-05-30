@@ -127,7 +127,7 @@ All outputs in `--output-dir`:
 | `pairs.csv` | One row per validated pair across all states: coordinates, Euler angles, barrel and connection angles, distance, classification. |
 | `summary.csv` | One row per state with total pair count, counts per classification, intermediate-display count, and mean barrel-axis angle. |
 | `summary.json` | The parameters used plus per-state summary. |
-| `angle_vs_distance.png` | Barrel-axis angle vs pair distance scatter plot (Sup. Fig. 7G-equivalent). |
+| `angle_vs_distance.png` | Barrel-axis angle vs pair distance scatter plot (Sup. Fig. 8H-equivalent). |
 
 ## Licence
 

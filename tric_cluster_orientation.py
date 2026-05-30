@@ -339,7 +339,7 @@ def summarise(pairs, state_name):
 
 def plot_angle_vs_distance(all_pairs_by_state, out_path,
                            same_dir=40.0, tric_diameter_nm=17.0):
-    """Scatter plot matching Sup. Fig. 7G: barrel angle vs pair distance."""
+    """Scatter plot matching Sup. Fig. 8H: barrel angle vs pair distance."""
     fig, ax = plt.subplots(figsize=(7, 6))
     colours = {
         'Head-to-head': '#1f77b4',
