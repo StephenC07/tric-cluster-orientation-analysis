@@ -9,9 +9,9 @@ group symmetry.
 
 Accompanies:
 
-> Pražák V, Harley I, Boutell C, Thomason PA, Carlin LM, Davis BG, Kaufmann R,
-> Carter SD. *In situ molecular architecture of eYFP-PML.I bodies by cryo-CLEM
-> and cryo-electron tomography reveals trinucleosomes in an open state.*
+> Pražák V, Harley I, Falckenhayn J, Boutell C, Thomason PA, Davis BG,
+> Kaufmann R, Carter SD. *In situ architecture of PML nuclear bodies reveals a
+> porous, chromatin-permissive interior.* (submitted to Nature Cell Biology, 2026)
 
 ## Scientific summary
 
@@ -132,3 +132,11 @@ All outputs in `--output-dir`:
 ## Licence
 
 MIT (see `LICENSE`).
+
+## Reproducing the submitted numbers
+
+The pair classification reported in the manuscript (22 head-to-equator, 10
+equator-to-equator, 0 head-to-head closed TRiC pairs) uses the Euler angles from
+the RELION D8 refinement (Refine3D job178), not the angles in the PyTOM
+template-matching output. That STAR file will be added to this repository with
+the final submission.
