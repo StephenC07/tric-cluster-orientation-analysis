@@ -11,7 +11,7 @@ pipeline:
        a separate "refined" STAR (e.g. output of a D8-symmetric 3D
        refinement), looked up by (tomo, rounded x/y/z).
     3. Clusters each tomogram's particles with DBSCAN
-       (default eps = 150 bin-4 pixels ~ 37 nm, min_samples = 2),
+       (default eps = 150 unbinned pixels at 2.48 A ~ 37 nm, min_samples = 2),
        then identifies pair contacts:
          - size-2 clusters are treated as pairs,
          - larger clusters contribute mutual nearest-neighbour pairs.
@@ -38,9 +38,9 @@ in PyTOM's matching-output convention should first be passed through
 a RELION refinement (or a matching-convention script).
 
 Reference:
-    Pražák V et al. In situ molecular architecture of eYFP-PML.I
-    bodies by cryo-CLEM and cryo-electron tomography reveals
-    trinucleosomes in an open state.
+    Pražák V et al. In situ architecture of PML nuclear bodies reveals
+    a porous, chromatin-permissive interior (submitted to Nature Cell
+    Biology, 2026).
 """
 
 from __future__ import annotations
@@ -339,7 +339,7 @@ def summarise(pairs, state_name):
 
 def plot_angle_vs_distance(all_pairs_by_state, out_path,
                            same_dir=40.0, tric_diameter_nm=17.0):
-    """Scatter plot matching Sup. Fig. 8H: barrel angle vs pair distance."""
+    """Scatter plot as in Extended Data Fig. 3h: barrel angle vs pair distance."""
     fig, ax = plt.subplots(figsize=(7, 6))
     colours = {
         'Head-to-head': '#1f77b4',

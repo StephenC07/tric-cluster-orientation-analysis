@@ -20,7 +20,7 @@ that the barrel axis is aligned to the reference Z axis, and
 Euler angles are in the RELION convention (as produced by RELION 3D
 refinement, not by raw PyTOM template matching).
 
-For every pair of particles within a DBSCAN cluster:
+For every candidate pair (each size-2 DBSCAN cluster, plus mutual nearest-neighbour pairs within larger clusters), retained if the centres lie within 20 nm:
 
 1. The barrel axis of each particle in lab coordinates is extracted
    from the literal RELION source-code matrix
@@ -98,9 +98,9 @@ accurate orientations come from a later RELION refinement.
 | Flag | Default | Description |
 |------|---------|-------------|
 | `--refined-angles` | off | Separate STAR to use for Euler-angle lookup. |
-| `--eps` | `150` | DBSCAN eps in pixels. |
+| `--eps` | `150` | DBSCAN eps in unbinned STAR pixels (150 x 2.48 Å = 37 nm). |
 | `--min-samples` | `2` | DBSCAN min_samples. |
-| `--max-pair-nm` | `20.0` | Maximum pair distance retained (Xing et al. 2024 convention). |
+| `--max-pair-nm` | `20.0` | Maximum pair distance retained (Xing et al. 2025 convention). |
 | `--same-direction-deg` | `40.0` | Barrel-axis angle threshold for "aligned". |
 | `--head-to-head-deg` | `20.0` | Connection-vector threshold for head-to-head. |
 | `--equator-deg` | `40.0` | Connection-vector threshold for equator-to-equator. |
@@ -127,7 +127,7 @@ All outputs in `--output-dir`:
 | `pairs.csv` | One row per validated pair across all states: coordinates, Euler angles, barrel and connection angles, distance, classification. |
 | `summary.csv` | One row per state with total pair count, counts per classification, intermediate-display count, and mean barrel-axis angle. |
 | `summary.json` | The parameters used plus per-state summary. |
-| `angle_vs_distance.png` | Barrel-axis angle vs pair distance scatter plot (Sup. Fig. 8H-equivalent). |
+| `angle_vs_distance.png` | Barrel-axis angle vs pair distance scatter plot (as in Extended Data Fig. 3h). |
 
 ## Licence
 
@@ -138,5 +138,5 @@ MIT (see `LICENSE`).
 The pair classification reported in the manuscript (22 head-to-equator, 10
 equator-to-equator, 0 head-to-head closed TRiC pairs) uses the Euler angles from
 the RELION D8 refinement (Refine3D job178), not the angles in the PyTOM
-template-matching output. That STAR file will be added to this repository with
-the final submission.
+template-matching output. That STAR file is available from the corresponding
+author.
